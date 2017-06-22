@@ -1,0 +1,26 @@
+{
+  "name": "myworkoutbro",
+  "version": "1.0.0",
+  "description": "Alexa My Workout Bro skill.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rlester/MyWorkoutBro.git"
+  },
+  "keywords": [
+    "Alexa",
+    "Lifting"
+  ],
+  "author": "Rob Lester & Stephen Roda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rlester/MyWorkoutBro/issues"
+  },
+  "homepage": "https://github.com/rlester/MyWorkoutBro#readme",
+  "dependencies": {
+    "alexa-sdk": "^1.0.10"
+  }
+}
