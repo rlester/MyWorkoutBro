@@ -1,2 +1,9 @@
-bicep curls
+bicep curl
 squat
+shrug
+bench press
+pushup
+tricep dip
+tricep extension
+plank
+lunge
