@@ -12,13 +12,17 @@ const APP_ID = 'amzn1.ask.skill.1e4f454b-6824-44a1-9665-cf8e2a43b69f';
 
 const handlers = {
   'GetExerciseInfo': function() {
-    const self = this,
-      user = this.event.session.user.userId,
-      exercise = normalizeExercise(this.event.request.intent.slots.exercise.value);
+      const user = this.event.session.user.userId,
+      userExercise = his.event.request.intent.slots.exercise.value,
+      normalizedExercise = normalizeExercise(userExercise);
 
-    var item = this.attributes[uniqueIdentifier(user, exercise)];
+    var item = this.attributes[uniqueIdentifier(user, normalizedExercise)];
 
-    self.emit(':tell', tellAboutExercise(item.exercise, item.weight, item.reps));
+    if (typeof item !== 'undefined') {
+      self.emit(':tell', tellAboutExercise(item.exercise, item.weight, item.reps));
+    } else {
+      self.emit(':tell', 'Your workout bro says do you even ' + userExercise + ' bro? You have\'t told me what you ' + userExercise );
+    }
   },
 
   'SetExerciseInfo': function() {
@@ -28,7 +32,7 @@ const handlers = {
       exercise = normalizeExercise(this.event.request.intent.slots.exercise.value);
 
     this.attributes[uniqueIdentifier(user, exercise)] = {
-      exercise: slots.exercise.value,
+      exercise: exercise,
       weight: slots.weight.value,
       reps: slots.reps.value
     };
