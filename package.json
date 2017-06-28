@@ -4,9 +4,16 @@
   "description": "Alexa My Workout Bro skill.",
   "main": "build/index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-register --recursive",
+    "lint": "eslint src test",
+    "deploy": "./node_modules/.bin/node-lambda deploy",
+    "test": "npm-run-all --parallel test:functional test:unit",
+    "test:unit": "mocha --recursive",
+    "test:functional": "npm-run-all test:functional:getexerciseinfo:valid test:functional:getexerciseinfo:invalid test:functional:setexerciseinfo:valid test:functional:setexerciseinfo:invalid",
     "test:watch": "npm test -- --watch",
-    "lint": "eslint src test"
+    "test:functional:getexerciseinfo:valid": "node-lambda run --eventFile ./test/functional/SetExerciseInfo/event-valid.json",
+    "test:functional:getexerciseinfo:invalid": "node-lambda run --eventFile ./test/functional/SetExerciseInfo/event-invalid.json",
+    "test:functional:setexerciseinfo:valid": "node-lambda run --eventFile ./test/functional/GetExerciseInfo/event-valid.json",
+    "test:functional:setexerciseinfo:invalid": "node-lambda run --eventFile ./test/functional/GetExerciseInfo/event-invalid.json"
   },
   "repository": {
     "type": "git",
@@ -30,6 +37,7 @@
     "chai": "^4.0.2",
     "eslint": "^3.9.1",
     "mocha": "^3.4.2",
-    "node-lambda": "^0.11.0"
+    "node-lambda": "motdotla/node-lambda#master",
+    "npm-run-all": "^4.0.2"
   }
 }

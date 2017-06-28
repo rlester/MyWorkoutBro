@@ -3,7 +3,7 @@
     {
       "EventSourceArn": "your event source arn",
       "StartingPosition": "LATEST",
-      "BatchSize": 100,
+      "BatchSize": 1,
       "Enabled": true
     }
   ],

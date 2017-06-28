@@ -1,0 +1,37 @@
+{
+  "session": {
+    "sessionId": "SessionId.a5dd0561-ac08-4868-9021-ac13add407c8",
+    "application": {
+      "applicationId": "amzn1.ask.skill.1e4f454b-6824-44a1-9665-cf8e2a43b69f"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AEBOYUFJFO5R552WMI3PVY3JCEUVQT3JU6RFGT4C64MKCUFT7M7WWVKO25NCOAIQAF6OINQNMDH6UXQKR6IBQXPUUUVBUPXMNLIOP4FGOSN24QQIRWWZ35EQDT2YA2RYX37TQFTB4WZTKPLV5FMB2KPEGXE43FLT6E46EMPADEUWXDASZ3LAWVUJRTS5NKGQQGWXDULHXIBVOOQ"
+    },
+    "new": false
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.b7da0e42-7b53-461f-b3ea-da61321b4017",
+    "locale": "en-US",
+    "timestamp": "2017-06-28T04:00:57Z",
+    "intent": {
+      "name": "SetExerciseInfo",
+      "slots": {
+        "reps": {
+          "name": "reps",
+          "value": "?"
+        },
+        "weight": {
+          "name": "weight",
+          "value": "225"
+        },
+        "exercise": {
+          "name": "exercise",
+          "value": "zzz"
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
