@@ -1,0 +1,29 @@
+{
+  "session": {
+    "sessionId": "SessionId.3110ef06-fb58-436d-9796-ec14a97fc422",
+    "application": {
+      "applicationId": "amzn1.ask.skill.1e4f454b-6824-44a1-9665-cf8e2a43b69f"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AEBOYUFJFO5R552WMI3PVY3JCEUVQT3JU6RFGT4C64MKCUFT7M7WWVKO25NCOAIQAF6OINQNMDH6UXQKR6IBQXPUUUVBUPXMNLIOP4FGOSN24QQIRWWZ35EQDT2YA2RYX37TQFTB4WZTKPLV5FMB2KPEGXE43FLT6E46EMPADEUWXDASZ3LAWVUJRTS5NKGQQGWXDULHXIBVOOQ"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.2e53451b-8bd3-4f97-98f1-a8024d78ffb2",
+    "locale": "en-US",
+    "timestamp": "2017-06-27T21:53:50Z",
+    "intent": {
+      "name": "GetExerciseInfo",
+      "slots": {
+        "exercise": {
+          "name": "exercise",
+          "value": "bicep curls"
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
