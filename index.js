@@ -31,18 +31,33 @@ const handlers = {
       userExercise = this.event.request.intent.slots.exercise.value,
       normalizedExercise = normalizeExercise(userExercise);
 
-    this.attributes[uniqueIdentifier(user, normalizedExercise)] = {
-      exercise: normalizedExercise,
-      weight: slots.weight.value,
-      reps: slots.reps.value
-    };
-
     if (typeof normalizedExercise !== 'undefined') {
-      this.emit(':tell', tellAboutExercise(normalizedExercise, slots.weight.value, slots.reps.value));
+      if (typeof slots.weight !== 'undefined') {
+        if (typeof slots.reps !== 'undefined') {
+          this.attributes[uniqueIdentifier(user, normalizedExercise)] = {
+            exercise: normalizedExercise,
+            weight: slots.weight.value,
+            reps: slots.reps.value
+          };
+          this.emit(':tell', tellAboutExercise(normalizedExercise, slots.weight.value, slots.reps.value));
+        } else {
+          this.attributes[uniqueIdentifier(user, normalizedExercise)] = {
+            exercise: normalizedExercise,
+            weight: slots.weight.value,
+          };
+          this.emit(':tell', tellAboutExercise(normalizedExercise, slots.weight.value));
+        }
+      } else {
+        this.emit(':tell', "Bro, I am having a little hard of hearing from listening to so much EDM can you tell me again how much iron you pumped?");
+      }
     } else {
       this.emit(':tell', "Seriously broseidon, what is " + userExercise + " I haven't heard of that before. I'll take note and add that as an exercise soon bro.");
       console.warn("Exercise not found we should add " + userExercise);
     }
+  },
+
+  'AMAZON.HelpIntent': function() {
+    this.emit(':tell', "Come on skelebro we have lifted before, you can tell me what exercise you lifted, how much weight, and even how many reps. Then to keep the bormentum up you can ask me about previous exercises. Feeling sickly bro?");
   },
 };
 
